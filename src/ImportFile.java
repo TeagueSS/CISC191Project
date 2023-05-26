@@ -4,7 +4,7 @@ import java.util.Hashtable;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class ImportFile
+public class ImportFile extends Thread
 
 /**
  * Lead Author(s):
@@ -61,6 +61,38 @@ public class ImportFile
 	 *         it. If there is an exception during the file reading process, an
 	 *         empty TrafficYear object is returned.
 	 */
+	String fileLocation; // ImportFile has-a file location
+
+	TrafficYear trafficYear; // ImportFile has-a TrafficYear
+
+	/**
+	 * constructor
+	 * 
+	 * this is an overloaded constructor for if they want to pass us the file
+	 * location at the time they create the file importer
+	 */
+	public ImportFile(String fileLocation) {
+		// saving our local file location
+		this.fileLocation = fileLocation;
+	}
+
+	/*
+	 * run - our multi-threaded start function
+	 * 
+	 */
+	public void run() {
+
+		trafficYear = getStreetYearFromFile(fileLocation);
+
+	}
+
+	/*
+	 * getTrafficYear - a getter for our traffic year
+	 * 
+	 */
+	public TrafficYear getTrafficYear() {
+		return trafficYear;
+	}
 
 	public TrafficYear getStreetYearFromFile(String inputFileLocation) {
 		// Creating a counter to keep track of how many of
@@ -278,7 +310,6 @@ public class ImportFile
 		// converting our arrayList to an array of Streets and returning it
 		return listOfStreets.toArray(new Street[listOfStreets.size()]);
 
-		
 	}
 
 }
