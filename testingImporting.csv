@@ -1,0 +1,4 @@
+OBJECTID,link_name,len_mile,ifc,ifc_desc,post_speed,iway,vmt,volumes,lanes,median,SHAPE_Length
+1,PASEO DEL Norte,0.153255,4,Collector,35,2,390.3923486,2.54733841,2,No Median,809.2201561
+2,PASEO DEL SUR,0.128556,4,Collector,35,2,327.4756372,2.54733841,2,No Median,678.7854382
+3,RALPHS RANCH,0.202993,7,Local (non-circulation element) Road,25,2,2651.720435,13.0631127,4,Raised of Fixed Median,1071.842082
