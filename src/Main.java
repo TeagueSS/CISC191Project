@@ -76,7 +76,7 @@ public class Main
 			TrafficYear year2035;
 			TrafficYear year2050;
 			
-			try {
+			
 			// tell them to start and then join a thread
 			fileImporter2016.start();
 			fileImporter2025.start();
@@ -93,11 +93,7 @@ public class Main
 			 year2025 = fileImporter2025.getTrafficYear();
 			 year2035 = fileImporter2035.getTrafficYear();
 			 year2050 = fileImporter2050.getTrafficYear();
-			}
-			catch(Exception e)
-			{
-				e.printStackTrace(System.out);
-			}
+			
 			
 			
 			// *********** HERE IS A NON- MULTITHREADED IMPORTATION ***************
@@ -125,7 +121,7 @@ public class Main
 			// we will hold all of this information in a double array
 			// as we will have an array of arrays of street sections (The matching street
 			// sections we find)
-			Street[][] requestedStreetAllData = new Street[4][1];
+			Street[][] requestedStreetAllData = new Street[4][2];
 
 			// Creating a new yearsOfStreets to hold all of our averaged data
 			Street[] yearsOfStreet = new Street[4];
